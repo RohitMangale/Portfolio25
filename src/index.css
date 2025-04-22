@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Roboto:ital,wght@0,100..900;1,100..900&family=Plaster&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,7 +8,134 @@
     --color-slateBlack: #1c1b1f;
     --color-lightslateBlack: #2a2b37;
 
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
 
     --font-roboto: "Roboto", sans-serif; 
     --font-allerta: "Allerta Stencil", sans-serif; 
+    --font-plaster: "Plaster"; 
   }
+  @layer utilities {
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+  
+    .animate-spin-slow {
+      animation: spin 15s linear infinite;
+    }
+  
+    .animate-bounce-slow {
+      animation: bounce 4s ease-in-out infinite;
+    }
+  
+    .glow {
+      filter: drop-shadow(0 0 8px theme("colors.blue.500"));
+    }
+  
+    .glow-strong {
+      filter: drop-shadow(0 0 12px theme("colors.blue.400"));
+    }
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+  
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+  
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  }
+  
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.6;
+      filter: drop-shadow(0 0 5px theme("colors.blue.500"));
+    }
+    50% {
+      opacity: 1;
+      filter: drop-shadow(0 0 15px theme("colors.blue.400"));
+    }
+  }
+
+  
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+  
+  /* Stacked scrolling animation */
+  .scroll-item {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Staggered animation for multiple items */
+  .scroll-item:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  
+  .scroll-item:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  
+  .scroll-item:nth-child(3) {
+    transition-delay: 0.5s;
+  }
+  

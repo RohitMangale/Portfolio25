@@ -27,7 +27,7 @@ export default function Navbar() {
           sticky top-10 z-50 mx-auto px-10 py-3 flex items-center justify-between
           rounded-2xl transition-all duration-500
           ${isScrolled
-            ? "w-1/2 bg-[rgba(42,43,56,0.5)] backdrop-blur-lg shadow-lg border-2 border-lightslateBlack"
+            ? "w-1/2 bg-[rgba(42,43,56,0.5)] backdrop-blur-3xl shadow-lg border-2 border-lightslateBlack"
             : "w-4/5 bg-transparent"
           }
         `}
@@ -41,9 +41,9 @@ export default function Navbar() {
             ${isScrolled ? "opacity-70" : "opacity-100"}
           `}
         >
-          <div className={`${isScrolled ? " hidden" : "visible"}`}  >About</div>
-          <div className={`${isScrolled ? " hidden" : "visible"}`}  >Projects</div>
-          <div className={`${isScrolled ? " hidden" : "visible"}`}  >Resume</div>
+          <div className={` cursor-pointer  ${isScrolled ? " hidden" : "visible"}`}  >About</div>
+          <div className={` cursor-pointer ${isScrolled ? " hidden" : "visible"}`}  >Projects</div>
+          <div className={` cursor-pointer ${isScrolled ? " hidden" : "visible"}`}  >Resume</div>
         </div>
 
         {/* mobile menu toggle */}

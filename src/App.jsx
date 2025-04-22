@@ -5,8 +5,10 @@ import Navbar from './components/Navbar'
 import CreativeFooter from './components/CreativeFooter'
 import Home from './Home'
 import Projects from './Projects'
+import WorkEducationSection from './components/WorkEdu'
 
 function App() {
+  
 
 
   return (
@@ -15,6 +17,7 @@ function App() {
       <Navbar/>
       <Home/>
       {/* <LandingPage/> */}
+      <WorkEducationSection/>
       <Projects/>
       <CreativeFooter/>
       {/* <h1 className='text-white' >Welcome to React</h1> */}
