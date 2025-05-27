@@ -87,7 +87,7 @@ export default function ProjectCard({
         </div>
 
         {/* Tech tags (vertical for desktop) */}
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:block z-10">
+        {/* <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:block z-10">
           <div className="flex flex-col items-center justify-center gap-6 -rotate-90 origin-center translate-y-32">
             {technologies.map((tech, index) => (
               <motion.span
@@ -111,7 +111,7 @@ export default function ProjectCard({
               </motion.span>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Project number */}
         <motion.div
@@ -171,6 +171,7 @@ export default function ProjectCard({
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-2 relative">
               {title}
+              
               <motion.span
                 className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-teal-500 to-purple-500"
                 initial={{ width: 0 }}

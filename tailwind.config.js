@@ -5,7 +5,10 @@ export default withUt({
     darkMode: "class",
     content: [
       "./src/**/*.{js,jsx}",
-      "./public/index.html"
+      "./public/index.html",
+      "./components/**/*.{ts,tsx}",
+      "./app/**/*.{ts,tsx}",
+      "./src/**/*.{ts,tsx}",
     ],
     theme: {
       container: {
@@ -50,11 +53,22 @@ export default withUt({
             DEFAULT: "hsl(var(--card))",
             foreground: "hsl(var(--card-foreground))",
           },
+          sidebar: {
+            DEFAULT: 'hsl(var(--sidebar-background))',
+            foreground: 'hsl(var(--sidebar-foreground))',
+            primary: 'hsl(var(--sidebar-primary))',
+            'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+            accent: 'hsl(var(--sidebar-accent))',
+            'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+            border: 'hsl(var(--sidebar-border))',
+            ring: 'hsl(var(--sidebar-ring))'
+          }
         },
         borderRadius: {
           lg: "var(--radius)",
           md: "calc(var(--radius) - 2px)",
           sm: "calc(var(--radius) - 4px)",
+          '2xl': '1rem'
         },
         keyframes: {
           "accordion-down": {
@@ -69,6 +83,77 @@ export default withUt({
             "0%, 100%": { transform: "translateY(0)" },
             "50%": { transform: "translateY(-10px)" },
           },
+          'fade-in': {
+            '0%': {
+              opacity: '0',
+              transform: 'translateY(20px)'
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateY(0)'
+            }
+          },
+          'slide-up': {
+            '0%': {
+              opacity: '0',
+              transform: 'translateY(40px)'
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateY(0)'
+            }
+          },
+          'slide-left': {
+            '0%': {
+              opacity: '0',
+              transform: 'translateX(40px)'
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateX(0)'
+            }
+          },
+          'bounce-subtle': {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-10%)' }
+          },
+
+          'float-slow': {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-8%)' }
+          },
+          'pulse-subtle': {
+            '0%, 100%': { opacity: '1' },
+            '50%': { opacity: '0.85' }
+          },
+          'pulse-slow': {
+            '0%, 100%': { transform: 'scale(1)' },
+            '50%': { transform: 'scale(1.05)' }
+          },
+          'spin-slow': {
+            '0%': { transform: 'rotate(0deg)' },
+            '100%': { transform: 'rotate(360deg)' }
+          },
+          'title-reveal': {
+            '0%': { 
+              opacity: '0',
+              transform: 'translateY(1rem)'
+            },
+            '100%': { 
+              opacity: '1',
+              transform: 'translateY(0)'
+            }
+          },
+          'slide-in-left': {
+            '0%': {
+              opacity: '0',
+              transform: 'translateX(-40px)'
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateX(0)'
+            }
+          }
         },
         animation: {
           "accordion-down": "accordion-down 0.2s ease-out",
@@ -76,7 +161,19 @@ export default withUt({
           "float": "float 6s ease-in-out infinite",
           "spin-slow": "spin 10s linear infinite",
           "bounce-slow": "bounce 3s infinite",
+          'fade-in': 'fade-in 0.5s ease-out',
+          'slide-up': 'slide-up 0.7s ease-out',
+          'slide-left': 'slide-left 0.7s ease-out',
+          'bounce-subtle': 'bounce-subtle 3s ease infinite',
+          'float-slow': 'float-slow 6s ease-in-out infinite',
+          'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
+          'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
+          'title-reveal': 'title-reveal 0.8s ease-out forwards',
+          'slide-in-left': 'slide-in-left 0.7s ease-out'
         },
+        boxShadow: {
+          'glow-blue': '0 0 15px 5px rgba(59, 130, 246, 0.3)'
+        }
       },
     },
     plugins: [require("tailwindcss-animate")],

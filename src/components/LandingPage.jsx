@@ -1,188 +1,144 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-const LandingPage = () => {
+import { ArrowDown, Code, Coffee, Terminal, Zap } from "lucide-react";
+import { head } from "framer-motion/client";
+
+const headlines = [
+  {text : "Breaking Code, Not Dreams " , icon: "🚀"},
+  {text :"Turning Coffee into Functions ", icon: "☕"},
+  {text :"Ctrl+Alt+Building the Future ", icon: "🔮"}
+];
+
+const quickStats = [
+  { label: "Current Focus", value: "Full Stack Dev", icon: Code },
+  { label: "Coffee Level", value: "99%", icon: Coffee },
+  { label: "Status", value: "Available", icon: Zap },
+];
+
+export default function LandingPage() {
+  const [headlineIndex, setHeadlineIndex] = useState(0);
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const interval = setInterval(() => {
+      setHeadlineIndex((prev) => (prev + 1) % headlines.length);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Background Elements */}
-    <div className="absolute inset-0 z-0">
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent opacity-40"></div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-blue-500"></div>
-      <div className="absolute bottom-1/3 left-1/3 w-3 h-3 rounded-full bg-blue-500/50"></div>
-      <div className="absolute top-1/2 right-1/3 w-1 h-1 rounded-full bg-white"></div>
-
-      {/* 3D Hand Element */}
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 opacity-20">
-        <svg
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M50 10C30 10 10 30 10 50C10 70 30 90 50 90C70 90 90 70 90 50C90 30 70 10 50 10Z"
-            fill="white"
-          />
-        </svg>
-      </div>
-    </div>
-
-    <motion.div
-      style={{ opacity, scale, y }}
-      className="container mx-auto px-4 md:px-6 relative z-10 pt-24 md:pt-0"
+    <main
+      ref={containerRef}
+      className="relative max-h-screen text-white mb-[150px]  mt-0"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-8 md:col-start-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-4 inline-flex items-center"
-            >
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                Available for new projects
-              </div>
-            </motion.div>
-
-            <div className="relative">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-6xl md:text-8xl font-bold tracking-tight mb-2"
-              >
-                I'M <span className="text-white">Rohit</span>
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="mb-6"
-              >
-                <h2 className="text-5xl md:text-7xl font-bold text-white uppercase tracking-tight">
-                  Software{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                    DEVELOPER
-                  </span>
-                </h2>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-center gap-6 mb-8"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-green-500"></div>
-                <span className="text-sm uppercase tracking-wider">
-                  MUMBAI, INDIA
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-blue-500"></div>
-                <span className="text-sm uppercase tracking-wider">
-                  DEVELOPER
-                </span>
-              </div>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-gray-400 text-lg md:text-xl max-w-2xl mb-12"
-            >
-              Turning ideas into real life products is my calling. I thrive on
-              designing experiences that leave a mark—be it through smoother
-              payment flows or more intuitive interfaces.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="#work"
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors"
-              >
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="px-8 py-3 bg-transparent border border-white/20 hover:border-white/40 rounded-md text-white font-medium transition-colors"
-              >
-                Get in Touch
-              </a>
-            </motion.div>
-          </div>
-
-          <div className="md:col-span-3 md:col-start-10 hidden md:block">
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg blur opacity-30"></div>
-              <div className="relative h-64 w-full rounded-lg bg-black/50 border border-white/10 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl font-bold text-blue-500">01</div>
-                  <div className="text-xs uppercase tracking-widest mt-2">
-                    Introduction
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent opacity-40" />
+        {/* <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
+        <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-blue-500" />
+        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 rounded-full bg-blue-500/50" />
+        <div className="absolute top-1/2 right-1/3 w-1 h-1 rounded-full bg-white" /> */}
       </div>
-    </motion.div>
 
-    {/* Scroll Indicator */}
-    <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        className="text-sm text-gray-400 mb-2"
-      >
-        Scroll to explore
-      </motion.div>
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: "loop",
-        }}
-      >
-        <ChevronDown size={20} className="text-blue-500" />
-      </motion.div>
-    </div>
-  </section>
-  )
+      {/* Content */}
+      <section className="relative flex flex-col justify-center items-center min-h-[calc(100vh-100px)] px-4 text-center z-10">
+        <motion.div style={{ opacity, scale, y }} className="space-y-8 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-2 mb-10"
+          >
+            <p className="text-lg md:text-xl text-gray-400 font-mono">
+              {"<"}<span className="text-blue-500">Hello World</span>{" />"}
+            </p>
+            <p className="text-xl md:text-2xl text-gray-300">
+              I'm <span className="text-white font-semibold">Rohit Mangale</span>
+            </p>
+          </motion.div>
+
+          <motion.h1
+            key={headlineIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-6xl font-bold"
+          >
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+              {headlines[headlineIndex].text.split(" ").slice(0, -1).join(" ")}
+            </span>
+            {headlines[headlineIndex].icon && (
+              <span className="text-3xl md:text-4xl lg:text-5xl">
+                {headlines[headlineIndex].icon}
+              </span>
+            )}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-xl md:text-2xl text-gray-400 leading-relaxed"
+          >
+            A computer science student crafting digital experiences with{" "}
+            <span className="text-emerald-400">clean code</span>,{" "} <br />
+            <span className="text-blue-400">creative solutions</span>, and{" "}
+            <span className="text-orange-400">endless curiosity</span>.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8"
+          >
+            {quickStats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-4 text-center group hover:border-emerald-500/50 transition-all"
+              >
+                <stat.icon className="h-6 w-6 mx-auto mb-2 text-blue-500 group-hover:text-emerald-300" />
+                <div className="text-lg font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-xs text-gray-400 uppercase tracking-wide">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="absolute bottom-[0] z-20 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="flex flex-col items-center space-y-2 text-gray-500"
+
+          >
+            <div className="inline-block px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium mb-4">
+                01 // Introduction
+              </div>
+            {/* <span className="text-sm font-mono">scroll.down()</span> */}
+            <ArrowDown className="h-5 w-5" />
+          </motion.div>
+        </motion.div>
+      </section>
+    </main>
+  );
 }
-
-export default LandingPage

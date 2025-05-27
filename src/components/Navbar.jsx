@@ -25,10 +25,10 @@ export default function Navbar() {
       <div
         className={`
           sticky top-10 z-50 mx-auto px-10 py-3 flex items-center justify-between
-          rounded-2xl transition-all duration-500
+          rounded-2xl transition-all duration-300  border-none  scroll-smooth 
           ${isScrolled
-            ? "w-1/2 bg-[rgba(42,43,56,0.5)] backdrop-blur-3xl shadow-lg border-2 border-lightslateBlack"
-            : "w-4/5 bg-transparent"
+            ? "w-1/2 bg-[rgba(42,43,56,0.5)] backdrop-blur-3xl shadow-lg !outline-2 !outline-lightslateBlack "
+            : "w-4/5 bg-transparent  "
           }
         `}
       >
