@@ -54,7 +54,7 @@ const Experience = () => {
         <TimelineItem
   title="Red Team Analyst Intern"
   subtitle="DeepCytes Technologies"
-  date="Summer 2024"
+  date="Jun-July 2024"
   icon={
     <div className="bg-blue-600 p-2 rounded-full">
       <ShieldAlert className="h-5 w-5 text-white animate-pulse-slow delay-300" />
