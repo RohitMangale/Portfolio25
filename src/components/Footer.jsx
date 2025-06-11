@@ -26,8 +26,9 @@ function ContactSection() {
           className="text-center space-y-8"
         >
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-relaxed">
-              <span className=" bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent" >Let's Build</span>  Something Amazing
+              <h2 className=" headingText">
+              <span className=" headingSpan">
+                Let's Build</span>  Something Amazing
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Got a project? Let's break the internet together. I'm always excited to collaborate on innovative ideas.

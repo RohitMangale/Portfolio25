@@ -6,9 +6,9 @@ const Hero = () => {
     <section className="animate-fade-in">
       <div className="flex items-center justify-start space-x-3 mb-6">
         <User className="h-8 w-8 text-blue-600 animate-float" />
-        <h1 className="text-4xl md:text-6xl font-bold text-white">
-          <span className="text-gradient">Just Another Code Wizard</span> in the Making <span className="text-blue-600 animate-pulse">🪄💻</span>
-        </h1>
+        <h2 className=" headingText">
+        <span className=" headingSpan">Just Another Code Wizard</span> in the Making <span className="text-blue-600 animate-pulse">🪄💻</span>
+        </h2>
       </div>
 
       <div className="mt-8 bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white/20">
