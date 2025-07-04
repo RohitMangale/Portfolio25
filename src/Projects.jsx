@@ -18,16 +18,16 @@ export default function Projects() {
   const y3 = useTransform(scrollYProgress, [0, 1], [200, 0]);
 
   return (
-    <main ref={containerRef} className=" min-h-screen py-20 px-6 relative">
+    <main ref={containerRef} className=" min-h-screen py-20 px-6 relative w-7xl mx-auto">
       <section id="work" className="py-24  relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent opacity-40"></div>
 
         <div className="container mx-auto mb-5 px-4 md:px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start mb-16">
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium mb-4">
+              {/* <div className="inline-block px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium mb-4">
                 04 // Projects
-              </div>
+              </div> */}
               <h2 className=" headingText">
                 <span className=" headingSpan">
                   Turning ideas
@@ -47,7 +47,7 @@ export default function Projects() {
       </section>
 
       {/* Animated Elements - Left */}
-      <div className="absolute left-0 top-20 h-full w-24 md:w-32 lg:w-48 pointer-events-none">
+      {/* <div className="absolute left-0 top-20 h-full w-24 md:w-32 lg:w-48 pointer-events-none">
         <div className="absolute top-[15%] left-6 md:left-10 opacity-20 animate-pulse">
           <SparklesIcon size={32} className="text-blue-500" />
         </div>
@@ -55,10 +55,10 @@ export default function Projects() {
           <Code2Icon size={48} className="text-blue-400 glow" />
         </div>
         <div className="h-full w-full bg-gradient-to-r from-blue-900/10 to-transparent" />
-      </div>
+      </div> */}
 
       {/* Animated Elements - Right */}
-      <div className="absolute right-0 top-20 h-full w-24 md:w-32 lg:w-48 pointer-events-none">
+      {/* <div className="absolute right-0 top-20 h-full w-24 md:w-32 lg:w-48 pointer-events-none">
         <div className="absolute top-[45%] right-8 md:right-12 opacity-20 animate-pulse">
           <LayersIcon size={38} className="text-blue-500 glow" />
         </div>
@@ -66,7 +66,7 @@ export default function Projects() {
           <AtomIcon size={32} className="text-blue-400 glow" />
         </div>
         <div className="h-full w-full bg-gradient-to-l from-blue-900/10 to-transparent" />
-      </div>
+      </div> */}
 
       {/* Projects Section */}
       <div className="max-w-4xl mx-auto space-y-24 relative z-10">

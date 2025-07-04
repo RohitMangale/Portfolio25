@@ -43,6 +43,7 @@ export default function Navbar() {
         >
           <div className={` cursor-pointer  ${isScrolled ? " hidden" : "visible"}`}  >About</div>
           <div className={` cursor-pointer ${isScrolled ? " hidden" : "visible"}`}  >Projects</div>
+          <div className={` cursor-pointer ${isScrolled ? " hidden" : "visible"}`}  >Skills</div>
           <div className={` cursor-pointer ${isScrolled ? " hidden" : "visible"}`}  >Resume</div>
         </div>
 

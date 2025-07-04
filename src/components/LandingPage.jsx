@@ -50,8 +50,8 @@ export default function LandingPage() {
       </div>
 
       {/* Content */}
-      <section className="relative flex flex-col justify-center items-center min-h-[calc(100vh-100px)] px-4 text-center z-10">
-        <motion.div style={{ opacity, scale, y }} className="space-y-8 max-w-5xl">
+      <section className="relative flex flex-col justify-center items-center min-h-[calc(100vh-100px)] w-6xl mx-auto px-4 text-center z-10">
+        <motion.div style={{ opacity, scale, y }} className="space-y-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,9 +90,9 @@ export default function LandingPage() {
             className="text-xl md:text-2xl text-gray-400 leading-relaxed"
           >
             A computer science student crafting digital experiences with{" "}
-            <span className="text-emerald-400">clean code</span>,{" "} <br />
+            <span className="text-white">clean code</span>,{" "} <br />
             <span className="text-blue-400">creative solutions</span>, and{" "}
-            <span className="text-orange-400">endless curiosity</span>.
+            <span className="text-white">endless curiosity</span>.
           </motion.p>
 
           <motion.div
@@ -108,9 +108,9 @@ export default function LandingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-4 text-center group hover:border-emerald-500/50 transition-all"
+                className="bg-gray-900/50 backdrop-blur-sm border  border-gray-700/50 rounded-lg p-4 text-center group hover:border-gray-500/50 transition-all"
               >
-                <stat.icon className="h-6 w-6 mx-auto mb-2 text-blue-500 group-hover:text-emerald-300" />
+                <stat.icon className="h-6 w-6 mx-auto mb-2 text-blue-500 group-hover:text-gray-500" />
                 <div className="text-lg font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-xs text-gray-400 uppercase tracking-wide">{stat.label}</div>
               </motion.div>
@@ -131,10 +131,11 @@ export default function LandingPage() {
             className="flex flex-col items-center space-y-2 text-gray-500"
 
           >
-            <div className="inline-block px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium mb-4">
+            {/* <div className="inline-block px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium mb-4">
                 01 // Introduction
-              </div>
+              </div> */}
             {/* <span className="text-sm font-mono">scroll.down()</span> */}
+            My Journey Awaits
             <ArrowDown className="h-5 w-5" />
           </motion.div>
         </motion.div>

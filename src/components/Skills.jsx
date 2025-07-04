@@ -7,7 +7,7 @@ const skillCategories = [
     id: "frontend",
     title: "Frontend",
     icon: Palette,
-    color: "emerald",
+    color: "blue",
     description: "Crafting beautiful user interfaces",
     skills: [
       { name: "React", level: 90, experience: "2 years", hot: true },
@@ -37,7 +37,7 @@ const skillCategories = [
     id: "tools",
     title: "Tools & DevOps",
     icon: Wrench,
-    color: "orange",
+    color: "blue",
     description: "Streamlining development workflows",
     skills: [
       { name: "Git", level: 90, experience: "2 years", hot: false },
@@ -89,13 +89,16 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
+          
         >
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent mb-4">
-            Tech Arsenal
+          {/* <div className="inline-block px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-medium mb-4">
+                03 // Skills
+              </div> */}
+          <h2 className="headingText">
+            <span className="headingSpan">Tech </span>
+            Arsenal 
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A curated collection of technologies I've mastered and tools I use to bring ideas to life
-          </p>
+          
         </motion.div>
 
         <motion.div
@@ -115,7 +118,7 @@ export default function Skills() {
                 onClick={() => setActiveCategory(category.id)}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative px-6 py-4 rounded-xl border backdrop-blur-sm transition-all duration-300 ${
+                className={`relative px-6 py-4 cursor-pointer rounded-xl border backdrop-blur-sm transition-all duration-300 ${
                   isActive
                     ? `bg-gradient-to-r ${colors.bg} ${colors.border} ${colors.text} shadow-lg ${colors.glow}`
                     : "bg-gray-900/50 border-gray-700/50 text-gray-400 hover:border-gray-600/50"
@@ -254,7 +257,7 @@ export default function Skills() {
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-emerald-400 mb-2"
+              className="text-3xl font-bold text-white mb-2"
             >
               18+
             </motion.div>
@@ -267,7 +270,7 @@ export default function Skills() {
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-blue-400 mb-2"
+              className="text-3xl font-bold text-white mb-2"
             >
               2+
             </motion.div>
@@ -280,7 +283,7 @@ export default function Skills() {
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-orange-400 mb-2"
+              className="text-3xl font-bold text-white mb-2"
             >
               6
             </motion.div>
