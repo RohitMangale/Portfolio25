@@ -148,11 +148,11 @@ export default function ProjectCard({
         </div>
 
         {/* Image */}
-        <motion.div className="md:w-1/2 relative" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+        <motion.div className="md:w-3/5 relative" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
           <div className="aspect-square md:aspect-auto md:h-full overflow-hidden rounded-[24px] m-4 relative">
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
             <motion.div className="w-full h-full" whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }}>
-              <img
+              <img  
                 src={image}
                 alt={title}
                 className="w-full h-full object-cover transition-transform duration-700"
@@ -162,7 +162,7 @@ export default function ProjectCard({
         </motion.div>
 
         {/* Content */}
-        <div className="md:w-1/2 p-8 flex flex-col justify-center relative">
+        <div className="md:w-2/5 p-8 flex flex-col justify-center relative">
           <motion.div
             className="mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -181,7 +181,7 @@ export default function ProjectCard({
             </h2>
             {subtitle && (
               <motion.p
-                className="text-xl text-gray-400"
+                className="text-md mt-5 text-gray-400"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}

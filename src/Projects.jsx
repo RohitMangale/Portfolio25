@@ -3,7 +3,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./components/ProjectCard";
 import proj1 from "./assets/eazzy.png";
 import proj2 from "./assets/truchain.png";
-import proj3 from "./assets/proj3.png";
+import proj3 from "./assets/snapUrl_Mockup.png";
+import proj4 from "./assets/nimbusMockup.png";
+import proj5 from "./assets/MessMateMockup.png";
+
+
 import { SparklesIcon, Code2Icon, LayersIcon, AtomIcon } from "lucide-react";
 
 export default function Projects() {
@@ -70,6 +74,7 @@ export default function Projects() {
 
       {/* Projects Section */}
       <div className="max-w-4xl mx-auto space-y-24 relative z-10">
+
         <motion.div
           style={{ y: y1 }}
           initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
@@ -111,7 +116,7 @@ export default function Projects() {
           />
         </motion.div>
 
-        {/* <motion.div
+        <motion.div
           style={{ y: y3 }}
           initial={{ scale: 0.8, rotate: -3, opacity: 0 }}
           whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
@@ -125,14 +130,62 @@ export default function Projects() {
         >
           <ProjectCard
             number="03"
-            title="E-Commerce Platform"
-            subtitle="Modern Shopping Experience"
+            title="SnapUrl"
+            subtitle="Url Shortner"
             image={proj3}
             technologies={["NEXT JS", "TAILWIND CSS", "STRIPE API"]}
             websiteUrl="#"
-            githubUrl="#"
+            githubUrl="https://github.com/RohitMangale/snapUrl"
           />
-        </motion.div> */}
+        </motion.div>
+
+        <motion.div
+          style={{ y: y3 }}
+          initial={{ scale: 0.8, rotate: -3, opacity: 0 }}
+          whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 80,
+            damping: 12,
+            delay: 0.2,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <ProjectCard
+            number="04"
+            title="Nimbus"
+            subtitle="Supply chain and Logistics for aerospace industry"
+            image={proj4}
+            technologies={["Reactjs", "TAILWIND CSS", "STRIPE API"]}
+            websiteUrl="#"
+            githubUrl="https://github.com/RohitMangale/Nimbus"
+          />
+        </motion.div>
+
+        <motion.div
+          style={{ y: y3 }}
+          initial={{ scale: 0.8, rotate: -3, opacity: 0 }}
+          whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 80,
+            damping: 12,
+            delay: 0.2,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <ProjectCard
+            number="05"
+            title="Messmate"
+            subtitle=" User-friendly Mess Management Webapp "
+            image={proj5}
+            technologies={["NEXT JS", "TAILWIND CSS", "STRIPE API"]}
+            websiteUrl="#"
+            githubUrl="https://github.com/RohitMangale/MessMate"
+          />
+        </motion.div>
+
+
       </div>
     </main>
   );
