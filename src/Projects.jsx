@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./components/ProjectCard";
-import proj1 from "./assets/eazzy.png";
-import proj2 from "./assets/truchain.png";
-import proj3 from "./assets/snapUrl_Mockup.png";
-import proj4 from "./assets/nimbusMockup.png";
-import proj5 from "./assets/MessMateMockup.png";
+import eazzy from "./assets/eazzy.png";
+import truchain from "./assets/truchain.png";
+import snapurl from "./assets/snapUrl_Mockup.png";
+import nimbus from "./assets/nimbusMockup.png";
+import messmate from "./assets/MessMateMockup.png";
+import dehire from "./assets/dehire.png";
+
 
 
 import { SparklesIcon, Code2Icon, LayersIcon, AtomIcon } from "lucide-react";
@@ -86,7 +88,7 @@ export default function Projects() {
             number="01"
             title="EazzyFundzz"
             subtitle="Crowdfunding Platform"
-            image={proj1}
+            image={eazzy}
             technologies={["REACTJS", "Nodejs", "MongoDB"]}
             websiteUrl="https://eazzyfundzz.vercel.app/"
             githubUrl="https://github.com/RohitMangale/Crowd-Funding"
@@ -95,7 +97,7 @@ export default function Projects() {
 
         <motion.div
           style={{ y: y2 }}
-          initial={{ scale: 0.8, rotate: 5, opacity: 0 }}
+          initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
           whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
           transition={{
             type: "spring",
@@ -109,7 +111,7 @@ export default function Projects() {
             number="02"
             title="TruChain"
             subtitle="Decentralized Identity Management System"
-            image={proj2}
+            image={truchain}
             technologies={["REACTJS", "Pinata", "IPFS", "Solidity","Remix"]}
             websiteUrl="#"
             githubUrl="https://github.com/IMxSPYDER/COHERENCE-25_Dot_Sol_BlockChain"
@@ -132,16 +134,16 @@ export default function Projects() {
             number="03"
             title="SnapUrl"
             subtitle="Url Shortner"
-            image={proj3}
+            image={snapurl}
             technologies={["NEXT JS", "TAILWIND CSS", "STRIPE API"]}
             websiteUrl="#"
             githubUrl="https://github.com/RohitMangale/snapUrl"
           />
         </motion.div>
 
-        <motion.div
+          <motion.div
           style={{ y: y3 }}
-          initial={{ scale: 0.8, rotate: -3, opacity: 0 }}
+          initial={{ scale: 0.8, rotate: -8, opacity: 0 }}
           whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
           transition={{
             type: "spring",
@@ -153,18 +155,18 @@ export default function Projects() {
         >
           <ProjectCard
             number="04"
-            title="Nimbus"
-            subtitle="Supply chain and Logistics for aerospace industry"
-            image={proj4}
+            title="DeHire"
+            subtitle="Decentralized freelance marketplace"
+            image={dehire}
             technologies={["Reactjs", "TAILWIND CSS", "STRIPE API"]}
-            websiteUrl="#"
-            githubUrl="https://github.com/RohitMangale/Nimbus"
+            websiteUrl="https://hub.docker.com/layers/rohitmangale/dehire/latest/images/sha256:1dec7bd7c12ed0227f8b2f39aff1c1c71d26d10d9841ad0cefa5e7b23467ed8f?uuid=F084C353-ED82-4EB6-8888-A79FF761978D"
+            githubUrl="https://github.com/RohitMangale/DeHire"
           />
         </motion.div>
 
         <motion.div
           style={{ y: y3 }}
-          initial={{ scale: 0.8, rotate: -3, opacity: 0 }}
+          initial={{ scale: 0.8, rotate: -10, opacity: 0 }}
           whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
           transition={{
             type: "spring",
@@ -176,9 +178,32 @@ export default function Projects() {
         >
           <ProjectCard
             number="05"
+            title="Nimbus"
+            subtitle="Supply chain and Logistics for aerospace industry"
+            image={nimbus}
+            technologies={["Reactjs", "TAILWIND CSS", "STRIPE API"]}
+            websiteUrl="#"
+            githubUrl="https://github.com/RohitMangale/Nimbus"
+          />
+        </motion.div>
+
+        <motion.div
+          style={{ y: y3 }}
+          initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
+          whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 80,
+            damping: 12,
+            delay: 0.2,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <ProjectCard
+            number="06"
             title="Messmate"
             subtitle=" User-friendly Mess Management Webapp "
-            image={proj5}
+            image={messmate}
             technologies={["NEXT JS", "TAILWIND CSS", "STRIPE API"]}
             websiteUrl="#"
             githubUrl="https://github.com/RohitMangale/MessMate"
